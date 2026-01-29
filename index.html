@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silver Lining Cyber | Executive Cybersecurity Advisory</title>
+    <meta name="description" content="Strategic Cybersecurity Leadership, vCISO Services, and GRC Advisory by Joe Cozzupoli.">
+    <style>
+        :root {
+            --bg-color: #0f172a; /* Deep Slate Blue */
+            --text-color: #e2e8f0; /* Off-white */
+            --accent-color: #38bdf8; /* Cyber Blue */
+            --secondary-bg: #1e293b; /* Lighter Slate */
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Utility */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid #334155;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .nav-links a {
+            margin-left: 20px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent-color); }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #0f172a;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        .btn:hover { opacity: 0.9; }
+
+        /* About Section */
+        .about {
+            background-color: var(--secondary-bg);
+            padding: 80px 0;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .bio-text p { margin-bottom: 15px; color: #cbd5e1; }
+        
+        /* Services Section */
+        .services { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2rem; }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: var(--secondary-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            transition: transform 0.2s;
+        }
+        .service-card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+        .service-card h3 { color: var(--accent-color); font-size: 1.2rem; }
+        .service-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        .service-card li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            padding-left: 15px;
+            border-left: 2px solid #475569;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--secondary-bg);
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .quote-card {
+            background: var(--bg-color);
+            padding: 25px;
+            border-radius: 8px;
+            font-style: italic;
+        }
+        .author {
+            margin-top: 15px;
+            font-weight: bold;
+            font-style: normal;
+            color: var(--accent-color);
+            display: block;
+        }
+
+        /* Contact */
+        .contact { padding: 80px 0; text-align: center; }
+        .contact a {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+    
+        /* This forces the button text to stay dark, overriding the rule above */
+        .contact .btn {
+            color: #0f172a;
+            text-decoration: none;
+        }
+        
+        /* Form Styling */
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 4px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+        }
+        .form-submit {
+            width: 100%;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1rem;
+        }
+        
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">Silver Lining Cyber</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Strategic Security Leadership<br>Without the Overhead</h1>
+            <p>Proactive governance, risk, and compliance for organisations that cannot afford to be reactive. Virtual CISO services tailored to your business goals.</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <h3>Founder & Executive Director</h3>
+                    <p style="color: var(--accent-color); font-weight: bold;">Joe Cozzupoli</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px; color: #94a3b8;">Virtual & Fractional CISO | Strategic Advisor</p>
+                </div>
+                <div class="bio-text">
+                    <p>With over two decades of experience as a trusted security expert and advisor to CISOs and C-suite executives globally, I specialise in translating complex technical risks into business language.</p>
+                    <p>I have leveraged technology to drive impactful outcomes for Fortune 500 clients, governments, and major banks. My approach is not about selling fear; it is about building resilience, ensuring compliance, and enabling your business to operate securely in an evolving threat landscape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Core Capabilities</h2>
+                <p style="color: #94a3b8;">Right-sized services that support the sustainability of your security program.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Strategic Advisory (vCISO)</h3>
+                    <ul>
+                        <li>Cybersecurity Strategy & Roadmap Development</li>
+                        <li>Virtual & Fractional CISO Services</li>
+                        <li>Executive & Board Reporting</li>
+                        <li>Security Program Maturity Assessments</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Governance, Risk & Compliance</h3>
+                    <ul>
+                        <li>ISO/IEC 27001 Readiness & Advisory</li>
+                        <li>NIST, ASD Essential 8, SOCI & APRA Alignment</li>
+                        <li>Third-Party Risk Management (TPRM)</li>
+                        <li>Risk Management Framework Implementation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Emerging Technologies</h3>
+                    <ul>
+                        <li>AI & GenAI Risk Assessments</li>
+                        <li>Operational Technology (OT) Security</li>
+                        <li>Privacy Advisory for Emerging Tech</li>
+                        <li>ISO/IEC 42001 (AI Management) Guidance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industry Trust</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="quote-card">
+                    "Joe has always been a great, we worked together for a few years. He has always been an industry thought leader, assisted in finding the best solutions and been an incredible partner wherever he has landed."
+                    <span class="author">— Shannon Lorimer</span>
+                </div>
+                <div class="quote-card">
+                    "Joe is a CISO-level consulting professional who consistently delivers exceptional value for clients. He has a strong ability to translate complex cybersecurity and technical initiatives into clear, measurable business outcomes, ensuring security strategy aligns with risk, governance, and organisational priorities."
+                    <span class="author">— Daminda Kumara</span>
+                </div>
+                <div class="quote-card">
+                    "I strongly recommend Joe Cozzupoli for vCISO engagements that require deep cybersecurity expertise, strong executive presence, and the ability to engage confidently with senior stakeholders to drive practical, risk-aligned outcomes."
+                    <span class="author">— Abbas Kudrati</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Start the Conversation</h2>
+            <p style="margin: 20px 0; color: #94a3b8;">Fill out the form below to book a consultation or discuss your security needs.</p>
+            
+            <form action="https://formspree.io/f/mojwjkap" method="POST" class="contact-form">            
+                
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Your Company *</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5"></textarea>
+                </div>
+
+                <button type="submit" class="btn form-submit">Send Message</button>
+
+            </form>
+
+            <p style="margin-top: 40px; font-size: 0.8rem; color: #475569;">&copy; 2026 Silver Lining Cyber Pty Ltd.</p>
+        </div>
+    </section>
+</body>
+</html>
