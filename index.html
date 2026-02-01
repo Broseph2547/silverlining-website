@@ -136,30 +136,47 @@
             border-left: 2px solid #475569;
         }
 
-        /* Testimonials */
+       /* --- TESTIMONIALS SECTION --- */
         .testimonials {
             padding: 80px 0;
-            background-color: var(--secondary-bg);
+            background-color: #1e293b; /* Slightly lighter background */
         }
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 40px;
         }
-        .quote-card {
-            background: var(--bg-color);
-            padding: 25px;
+        .testimonial-card {
+            background-color: #0f172a; /* Dark background for contrast */
+            padding: 30px;
             border-radius: 8px;
+            border: 1px solid #334155;
+        }
+        .testimonial-quote {
+            color: #cbd5e1;
             font-style: italic;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
         }
-        .author {
+        .testimonial-author {
             margin-top: 15px;
-            font-weight: bold;
-            font-style: normal;
-            color: var(--accent-color);
-            display: block;
         }
-
+        .testimonial-author a {
+            color: var(--accent-color);
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        .testimonial-author a:hover {
+            text-decoration: underline;
+        }
+        /* Small LinkedIn icon hint */
+        .linkedin-icon {
+            margin-left: 6px;
+            font-size: 0.8em;
+        }
         /* Contact */
         .contact { padding: 80px 0; text-align: center; }
         .contact a {
@@ -379,26 +396,47 @@
 
     <section class="testimonials">
         <div class="container">
-            <div class="section-header">
-                <h2>Industry Trust</h2>
-            </div>
+            <h2 style="text-align: center;">Trusted by Industry Leaders</h2>
+            
             <div class="testimonial-grid">
-                <div class="quote-card">
-                    "Joe has always been a great, we worked together for a few years. He has always been an industry thought leader, assisted in finding the best solutions and been an incredible partner wherever he has landed."
-                    <span class="author">— Shannon Lorimer</span>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Joe has always been a great, we worked together for a few years. He has always been an industry thought leader, assisted in finding the best solutions and been an incredible partner wherever he has landed."
+                    </p>
+                    <div class="testimonial-author">
+                        <a href="https://www.linkedin.com/in/shannonlorimer/" target="_blank" rel="noopener noreferrer">
+                            Shannon Lorimer <span class="linkedin-icon">↗</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="quote-card">
-                    "Joe is a CISO-level consulting professional who consistently delivers exceptional value for clients. He has a strong ability to translate complex cybersecurity and technical initiatives into clear, measurable business outcomes, ensuring security strategy aligns with risk, governance, and organisational priorities."
-                    <span class="author">— Daminda Kumara</span>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Joe is a CISO-level consulting professional who consistently delivers exceptional value for clients. He has a strong ability to translate complex cybersecurity and technical initiatives into clear, measurable business outcomes, ensuring security strategy aligns with risk, governance, and organisational priorities."
+                    </p>
+                    <div class="testimonial-author">
+                        <a href="https://www.linkedin.com/in/daminda-kumara-79b87919/" target="_blank" rel="noopener noreferrer">
+                            Daminda Kumara <span class="linkedin-icon">↗</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="quote-card">
-                    "I strongly recommend Joe Cozzupoli for vCISO engagements that require deep cybersecurity expertise, strong executive presence, and the ability to engage confidently with senior stakeholders to drive practical, risk-aligned outcomes."
-                    <span class="author">— Abbas Kudrati</span>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "I strongly recommend Joe Cozzupoli for vCISO engagements that require deep cybersecurity expertise, strong executive presence, and the ability to engage confidently with senior stakeholders to drive practical, risk-aligned outcomes."
+                    </p>
+                    <div class="testimonial-author">
+                        <a href="https://www.linkedin.com/in/akudrati/" target="_blank" rel="noopener noreferrer">
+                            Abbas Kudrati <span class="linkedin-icon">↗</span>
+                        </a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
-
+    
     <section id="contact" class="contact">
         <div class="container">
             <h2>Start the Conversation</h2>
