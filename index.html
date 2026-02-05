@@ -107,6 +107,17 @@
         }
         .bio-text p { margin-bottom: 15px; color: #cbd5e1; }
         
+        /* Profile Picture Style */
+        .profile-pic {
+            width: 150px;       /* Good size for profile */
+            height: 150px;
+            object-fit: cover;  /* Ensures the face isn't stretched */
+            border-radius: 50%; /* Makes it a circle */
+            border: 3px solid var(--accent-color); /* Matches your blue theme */
+            margin-bottom: 20px;
+            display: block;
+        }
+        
         /* Services Section */
         .services { padding: 80px 0; }
         .section-header { text-align: center; margin-bottom: 60px; }
@@ -359,6 +370,9 @@
             <div class="about-grid">
               <div>
                     <h3>Executive Profile</h3>
+                    
+                    <img src="joe.jpg" alt="Joe Cozzupoli" class="profile-pic">
+                    
                     <p style="font-weight: bold; font-size: 1.1rem;">
                         <a href="https://www.linkedin.com/in/jcozzupoliciso/" target="_blank" style="color: var(--accent-color); text-decoration: none;">
                             Joe Cozzupoli <svg class="linkedin-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg>
