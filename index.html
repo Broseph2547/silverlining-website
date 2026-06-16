@@ -157,7 +157,35 @@
             padding-left: 15px;
             border-left: 2px solid #475569;
         }
-
+        
+        /* --- OPERATING MODELS SECTION --- */
+        .models {
+            padding: 80px 0;
+            background-color: var(--bg-color); 
+        }
+        .models-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        @media (min-width: 768px) {
+            .models-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .model-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+        .model-card img:hover {
+            transform: scale(1.02);
+            border-color: var(--accent-color);
+        }
+        
        /* --- TESTIMONIALS SECTION --- */
         .testimonials {
             padding: 80px 0;
@@ -449,6 +477,28 @@
                         <li>ISO/IEC 42001 (AI Management) Guidance</li>
                         <li>Cloud Security</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operating Models Section -->
+    <section id="operating-models" class="models">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 40px;">
+                <h2>Our Operating Models</h2>
+                <p style="color: #94a3b8;">How we deliver scalable, executive-level cybersecurity leadership to your business.</p>
+            </div>
+            
+            <div class="models-grid">
+                <!-- vCISO Infographic -->
+                <div class="model-card">
+                    <img src="vCISO Infographic.png" alt="vCISO Operating Model">
+                </div>
+                
+                <!-- Fractional CISO Infographic -->
+                <div class="model-card">
+                    <img src="FracCISO Infographic.png" alt="Fractional CISO Operating Model">
                 </div>
             </div>
         </div>
