@@ -168,11 +168,12 @@
             grid-template-columns: 1fr;
             gap: 40px;
         }
-        @media (min-width: 768px) {
+        
+        @media (min-width: 1024px) {
             .models-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(3, 1fr);
             }
-        }
+        }        }
         .model-card img {
             width: 100%;
             height: auto;
@@ -544,7 +545,12 @@
                 <div class="model-card">
                     <img src="FracCISO Infographic.png" alt="Fractional CISO Operating Model" onclick="openLightbox(this)">
                 </div>
-            </div>   
+
+                <!-- Field CISO Infographic -->
+                <div class="model-card">
+                    <img src="Field CISO Infographic.png" alt="Field CISO Operating Model" onclick="openLightbox(this)">
+                </div>
+            </div>    
     </section>
 
     <section class="testimonials">
