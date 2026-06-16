@@ -180,12 +180,56 @@
             border: 1px solid #334155;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         .model-card img:hover {
             transform: scale(1.02);
             border-color: var(--accent-color);
         }
-        
+
+        /* --- LIGHTBOX (MAGNIFY) STYLES --- */
+        .lightbox-modal {
+            display: none; /* Hidden by default */
+            position: fixed; 
+            z-index: 999; /* Sits on top of everything */
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(15, 23, 42, 0.95); /* Matches your dark theme */
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90vh; /* Prevents it from going off-screen */
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {transform: scale(0.9); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #94a3b8;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent-color);
+        }
+                
        /* --- TESTIMONIALS SECTION --- */
         .testimonials {
             padding: 80px 0;
@@ -493,15 +537,14 @@
             <div class="models-grid">
                 <!-- vCISO Infographic -->
                 <div class="model-card">
-                    <img src="vCISO Infographic.png" alt="vCISO Operating Model">
+                    <img src="vCISO Infographic.png" alt="vCISO Operating Model" onclick="openLightbox(this)">
                 </div>
                 
                 <!-- Fractional CISO Infographic -->
                 <div class="model-card">
-                    <img src="FracCISO Infographic.png" alt="Fractional CISO Operating Model">
+                    <img src="FracCISO Infographic.png" alt="Fractional CISO Operating Model" onclick="openLightbox(this)">
                 </div>
-            </div>
-        </div>
+            </div>   
     </section>
 
     <section class="testimonials">
@@ -590,5 +633,26 @@
             <p style="margin-top: 40px; font-size: 0.8rem; color: #475569;">&copy; 2020 Silver Lining Cyber Pty Ltd.</p>
         </div>
     </section>
+    <!-- The Lightbox Modal -->
+    <div id="myLightbox" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+    </div>
+    <!-- JavaScript for Lightbox -->
+    <script>
+        const lightbox = document.getElementById("myLightbox");
+        const lightboxImg = document.getElementById("lightboxImage");
+
+        // Opens the lightbox and inserts the clicked image
+        function openLightbox(element) {
+            lightbox.style.display = "flex"; 
+            lightboxImg.src = element.src; 
+        }
+
+        // Closes the lightbox
+        function closeLightbox() {
+            lightbox.style.display = "none";
+        }
+    </script>
 </body>
 </html>
