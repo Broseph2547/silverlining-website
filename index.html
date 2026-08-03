@@ -166,14 +166,21 @@
         
         .models-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
+            grid-template-columns: 1fr; /* 1 column on mobile */
+            gap: 20px; /* Reduced gap slightly to fit 4 comfortably */
         }
         
-        /* Forces 3 columns in a single row on computer screens */
+        /* 2 columns on tablets */
+        @media (min-width: 768px) {
+            .models-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* 4 columns in a single row on computer screens */
         @media (min-width: 1024px) {
             .models-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(4, 1fr);
             }
         }
         
@@ -460,7 +467,7 @@
               
               <h3>Executive Profile</h3>
                     
-                    <img src="joe.png" alt="Joe Cozzupoli" class="profile-pic">
+                    <img src="IMG_3901.jpeg" alt="Profile Picture" class="profile-pic">
 
                     <p style="font-weight: bold; font-size: 1.1rem;">
                         <a href="https://www.linkedin.com/in/jcozzupoliciso/" target="_blank" style="color: var(--accent-color); text-decoration: none;">
@@ -534,23 +541,22 @@
 
     <!-- Operating Models Section -->
     <section id="operating-models" class="models">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 40px;">
-                <h2>Our Operating Models</h2>
-                <p style="color: #94a3b8;">How we deliver scalable, executive-level cybersecurity leadership to your business.</p>
-            </div>
-            
             <div class="models-grid">
+                <!-- ISO/IEC 42001 Infographic -->
+                <div class="model-card">
+                    <img src="42001 Infograhic.png" alt="ISO/IEC 42001 Operating Model" onclick="openLightbox(this)">
+                </div>
+                
                 <!-- vCISO Infographic -->
                 <div class="model-card">
-                    <img src="vCISO Infographic.png" alt="vCISO Operating Model" onclick="openLightbox(this)">
+                    <img src="vCISO infographic.png" alt="vCISO Operating Model" onclick="openLightbox(this)">
                 </div>
                 
                 <!-- Fractional CISO Infographic -->
                 <div class="model-card">
-                    <img src="FracCISO Infographic.png" alt="Fractional CISO Operating Model" onclick="openLightbox(this)">
+                    <img src="Fractional CISO Infographic.png" alt="Fractional CISO Operating Model" onclick="openLightbox(this)">
                 </div>
-
+            
                 <!-- Field CISO Infographic -->
                 <div class="model-card">
                     <img src="Field CISO Infographic.png" alt="Field CISO Operating Model" onclick="openLightbox(this)">
