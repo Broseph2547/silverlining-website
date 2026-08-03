@@ -164,23 +164,24 @@
             background-color: var(--bg-color); 
         }
         
-        .models-grid {
+.models-grid {
             display: grid;
-            grid-template-columns: 1fr; /* 1 column on mobile */
-            gap: 20px; /* Reduced gap slightly to fit 4 comfortably */
+            grid-template-columns: auto; 
+            gap: 15px; /* A nice tight gap between images */
+            justify-content: center; /* Groups the whole cluster in the middle of the page */
+            justify-items: center;
         }
         
-        /* 2 columns on tablets */
         @media (min-width: 768px) {
             .models-grid {
-                grid-template-columns: repeat(2, 1fr);
+                /* 'auto' makes the column only as wide as the image */
+                grid-template-columns: repeat(2, auto);
             }
         }
         
-        /* 4 columns in a single row on computer screens */
         @media (min-width: 1024px) {
             .models-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(4, auto);
             }
         }
         
