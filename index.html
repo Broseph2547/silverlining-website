@@ -184,22 +184,29 @@
             }
         }
         
-        /* THIS IS THE PART THAT KEEPS THEM THE RIGHT SIZE */
+/* THE STYLING FOR THE NEW THUMBNAILS */
+        .model-card {
+            text-align: center; /* Centers the image within the grid cell */
+        }
+
         .model-card img {
-            width: 100%;
-            height: auto;
+            width: auto; /* Allow width to scale proportionally with height */
+            
+            /* THIS SETS THE NEW SMALLER SIZE */
+            max-height: 300px; /* Adjust this number to make them bigger or smaller initially */
+            
             border-radius: 8px;
             border: 1px solid #334155;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease;
-            cursor: pointer; 
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            cursor: pointer; /* Confirms it is clickable */
         }
         
         .model-card img:hover {
-            transform: scale(1.02);
+            transform: scale(1.05); /* Slightly bigger hover for better effect */
             border-color: var(--accent-color);
         }
-
+        
         /* --- LIGHTBOX (MAGNIFY) STYLES --- */
         .lightbox-modal {
             display: none; 
