@@ -293,6 +293,10 @@
             font-size: 0.8em;
         }
         
+        <!-- Calendly Assets -->
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+        
         /* --- LINKEDIN ICON STYLES --- */
         .linkedin-svg {
             width: 16px;
@@ -615,49 +619,21 @@
         </div>
     </section>
     
-    <section id="contact" class="contact">
+   <!-- CONTACT / BOOKING SECTION -->
+    <section id="contact" style="padding: 80px 0; background-color: #0f172a; text-align: center; border-top: 1px solid #334155;">
         <div class="container">
-            <h2>Start the Conversation</h2>
-            <p style="margin: 20px 0; color: #94a3b8;">Fill out the form below to book a consultation or discuss your security needs.</p>
+            <h2 style="color: var(--accent-color); margin-bottom: 20px; font-size: 2.5rem;">Let's Connect</h2>
+            <p style="color: #cbd5e1; margin-bottom: 40px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Ready to discuss your security strategy, AI governance, or fractional leadership needs? Schedule a time directly on my calendar for a discovery call.
+            </p>
             
-            <form action="https://formsubmit.co/joe@silverliningcyber.com" method="POST" class="contact-form">
-
-            <input type="hidden" name="_next" value="https://silverliningcyber.com/success.html">
-    
-            <input type="hidden" name="_captcha" value="true">
-                        
-                <div class="form-group">
-                    <label for="name">Your Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Your Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="company">Your Company *</label>
-                    <input type="text" id="company" name="company" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" rows="5"></textarea>
-                </div>
-
-                <button type="submit" class="btn form-submit">Send Message</button>
-
-            </form>
-
-            <p style="margin-top: 40px; font-size: 0.8rem; color: #475569;">&copy; 2026 Silver Lining Cyber Pty Ltd · ABN 61652568904</p>
+            <!-- Calendly Popup Button -->
+            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/joe-ciso/cyber-discussion'}); return false;" class="btn" style="cursor: pointer; display: inline-block; padding: 15px 30px; font-size: 1.1rem;">
+                Book a Discovery Call
+            </a>
         </div>
     </section>
+    
     <!-- The Lightbox Modal -->
     <div id="myLightbox" class="lightbox-modal" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
